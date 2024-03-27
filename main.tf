@@ -138,7 +138,6 @@ resource "aws_instance" "webserver1" {
   ami                    = "ami-033a1ebf088e56e81"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1a"
-  key_name               = "nvj"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-1.id
   user_data              = "${file("apache.sh")}"
@@ -152,7 +151,6 @@ resource "aws_instance" "webserver2" {
   ami                    = "ami-033a1ebf088e56e81"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1b"
-  key_name               = "nvj"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-2.id
   user_data              = "${file("apache.sh")}"
@@ -167,7 +165,6 @@ resource "aws_instance" "appserver1" {
   ami                    = "ami-033a1ebf088e56e81"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1a"
-  key_name               = "nvj"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-1.id
   tags = {
@@ -179,7 +176,6 @@ resource "aws_instance" "appserver2" {
   ami                    = "ami-033a1ebf088e56e81"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1b"
-  key_name               = "nvj"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-2.id
 
